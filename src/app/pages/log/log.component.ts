@@ -12,7 +12,7 @@ import { RoterService } from 'src/app/shared/services/roter.service';
   styleUrls: ['./log.component.scss']
 })
 export class LogComponent implements OnInit {
-  regExpEmail = /^[a-z0-9\-\.]{1,}@gmail\.com|net\.us|org\.ua$/i;
+  regExpEmail = /^[a-z0-9\-\.]{1,}(@gmail\.com|net\.us|org\.ua)$/i;
   regExpPass = /^[a-zA-Z0-9]{6,15}$/;
   inputUser: string = '';
   inputPass: string = '';
