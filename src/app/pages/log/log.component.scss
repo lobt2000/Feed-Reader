@@ -1,0 +1,74 @@
+@import "../../../assets/style/mixins";
+@import "../../../assets/style/variable";
+
+.container {
+  margin: 200px auto;
+  width: 50%;
+  min-height: 10vh;
+
+  &__signIn {
+    width: 100%;
+    min-height: 10vh;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__form {
+    width: 100%;
+    min-height: 10vh;
+    @include flexbox(row, wrap, space-between, center);
+
+    label {
+      width: 50%;
+      min-height: 5vh;
+      font-size: 26px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 20px;
+
+    }
+
+    input {
+      width: 45%;
+      border-radius: 10px;
+      border: 1px solid gray;
+      min-height: 5vh;
+      //   font-size: 20px;
+      //   font-weight: 600;
+      //   text-align: center;
+      padding-left: 5px;
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+  }
+  &__logIn{
+      width: 100%;
+      min-height: 10vh;
+      @include flexbox(row, wrap, center, center);
+    &--button {
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+        border: 2px solid darkcyan;
+        background-color: darkcyan;
+        text-align: center;
+        color: white;
+        line-height: 35px;
+        font-size: 18px;
+        // margin: 20px auto;
+        font-weight: 500;
+        transition: background .250s linear, color .250s linear, border .250s linear;
+      }
+    
+      &--button:hover {
+        background: transparent;
+        color: darkcyan;
+      }
+    
+      &--button:focus {
+        outline: none;
+        box-shadow: 0 0 2px 3px darkcyan;
+      }
+  }
+}

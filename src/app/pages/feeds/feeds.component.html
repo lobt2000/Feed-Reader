@@ -1,0 +1,65 @@
+<header>
+  <nav>
+    <div class="feed-list" [style.overflow]="mySelect ? overflow : overflow">
+      <div class="feed-list__visible" (click)="selectFeed()">
+        {{currentFeed}} <img [attr.src]="angle" alt="">
+      </div>
+      <div class="feed-list__hidden">
+        <div *ngFor="let item of feeds; let i = index ">
+          <div class="link">
+
+            <div class="link__name" (click)="chooseFeed(item)">
+              {{i + 1}}. {{item}}
+            </div>
+            <img src="../../../assets/image/times-solid.svg" alt="" (click)="deleteFeed(i)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feed-button">
+      <button class="feed-button__add" (click)="clickAdd()">Add</button>
+      <button class="feed-button__search" (click)="GetRssFeedData()">Search</button>
+      <button class="feed-button__signOut" (click)="SignOut()">SignOut</button>
+    </div>
+  </nav>
+  <div class="feed-add" *ngIf="isAdd">
+    <input type="text" [(ngModel)]="newFeed" name="newFeed"
+      placeholder="https://www.nasa.gov/rss/dyn/breaking_news.rss">
+    <button class="feed-add__button" (click)="addFeed()">Save</button>
+  </div>
+
+</header>
+<section class="container" *ngIf="rss == 'rss'">
+
+  <div *ngIf="isEnclosure" class="container__rss">
+    <div class="container__rss--article" *ngFor="let item of data" (click)="goToDetails(item)">
+      <img [attr.src]="item.enclosure[0]?.$?.url" alt="">
+      <p class="title"> {{item?.title}}</p>
+    </div>
+  </div>
+  <div *ngIf="!isEnclosure" class="container__rss">
+    <div class="container__rss--news" *ngFor="let item of data" >
+
+      <p class="title"> {{item?.title}}</p>
+      <div class="info">
+        <p class="info__author">{{item["dc:creator"]}}</p>
+        <p class="info__date">{{item.pubDate | date: 'MMM d, y, h:mm:ss a'}}</p>
+      </div>
+    <button class="button" (click)="goToDetails(item)">Details</button>
+
+    </div>
+  </div>
+
+</section>
+<section class="container" *ngIf="rss == 'feed'">
+  <div class="container__feed" *ngFor="let item of data">
+    <!-- <img [attr.src]="item.enclosure[0].$.url" alt=""> -->
+    <p class="container__feed--title"> {{item.title}}</p>
+    <div class="container__feed--info">
+      <p class="author" [innerHTML]="item.author[0].name"></p>
+      <p class="datу">{{item.updated[0] | date: 'MMM d, y, h:mm:ss a'}}</p>
+    </div>
+    <button class="container__feed--button" (click)="goToDetails(item)">Details</button>
+
+  </div>
+</section>

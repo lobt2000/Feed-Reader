@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userId": 1,
+      "email": "bkolodiy20013@gmail.com",
+      "password": "12345678",
+      "feeds": [
+        "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+        "https://www.reddit.com/.rss",
+        "https://www.mobileworldlive.com/latest-stories/feed",
+        "https://www.nasa.gov/rss/dyn/breaking_news.rss"
+      ]
+    },
+    {
+      "userId": 2,
+      "email": "bkolodiy20013@gmail.com",
+      "password": "43543534",
+      "feeds": [
+        "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+        "https://www.reddit.com/.rss",
+        "https://www.mobileworldlive.com/latest-stories/feed"
+      ],
+      "id": 2
+    },
+    {
+      "userId": 3,
+      "email": "bkolodiy20013@gmail.com",
+      "password": "asfsadf",
+      "feeds": [
+        "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+        "https://www.reddit.com/.rss",
+        "https://www.mobileworldlive.com/latest-stories/feed"
+      ],
+      "id": 3
+    }
+  ]
+}

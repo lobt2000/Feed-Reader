@@ -1,0 +1,422 @@
+@import "../../../assets/style/mixins";
+@import "../../../assets/style/variable";
+
+header {
+
+  position: relative;
+  top: 0;
+  left: 0;
+  min-height: 10vh;
+  width: 100%;
+  line-height: 3rem;
+  font-family: sans-serif;
+}
+
+nav {
+  width: 100%;
+  @include flexbox(row, wrap, space-around, center);
+  min-height: 10vh;
+  background-color: white;
+  color: black;
+
+}
+
+.feed-list {
+  width: 40%;
+  height: 40px;
+  position: relative;
+  transition: overflow 600ms ease-in-out;
+
+  &__visible {
+    position: absolute;
+    height: 37px;
+    top: 0%;
+    left: 0;
+    width: 97%;
+    line-height: 30px;
+    // background-color: transparent;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    @include flexbox(row, wrap, space-between, center);
+    cursor: pointer;
+    background-color: white;
+    z-index: 0;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 20px;
+
+    }
+  }
+
+  &__hidden {
+
+    position: absolute;
+    min-height: 50px;
+    top: 40px;
+    left: 0;
+    width: 88%;
+    padding: 2rem;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 1;
+    color: white;
+
+    .link {
+      width: 100%;
+      min-height: 20px;
+      @include flexbox(row, nowrap, space-between, center);
+      cursor: pointer;
+
+      &__name {}
+
+      &__name:active {
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px 3px blue;
+
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        // margin-left: 20px;
+      }
+    }
+
+
+  }
+}
+
+.feed-button {
+  width: 40%;
+  min-height: 40px;
+  @include flexbox(row, wrap, space-around, center);
+
+  &__add {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid green;
+    background-color: green;
+    text-align: center;
+    color: white;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .250s linear, color .250s linear, border .250s linear;
+  }
+
+  &__add:hover {
+    background: transparent;
+    color: green;
+
+
+  }
+
+  &__add:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px green;
+  }
+
+
+  &__search {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    background-color: goldenrod;
+    text-align: center;
+    color: white;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background .250s linear, color .250s linear, border .250s linear;
+
+  }
+
+
+
+  &__search:hover {
+    background: transparent;
+    color: goldenrod;
+
+
+  }
+
+  &__search:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px goldenrod;
+  }
+  &__signOut {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid red;
+    background-color: red;
+    text-align: center;
+    color: white;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background .250s linear, color .250s linear, border .250s linear;
+
+  }
+
+
+
+  &__signOut:hover {
+    background: transparent;
+    color: red;
+
+
+  }
+
+  &__signOut:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px red;
+  }
+}
+
+.feed-add {
+  width: 100%;
+  min-height: 10vh;
+  @include flexbox(row, wrap, space-around, center);
+
+  input {
+    width: 40%;
+    min-height: 35px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+  }
+
+  &__button {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid darkcyan;
+    background-color: darkcyan;
+    text-align: center;
+    color: white;
+    line-height: 35px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: background .250s linear, color .250s linear, border .250s linear;
+  }
+
+  &__button:hover {
+    background: transparent;
+    color: darkcyan;
+  }
+
+  &__button:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px darkcyan;
+  }
+}
+
+.container {
+  width: 98%;
+  min-height: 10vh;
+  @include flexbox(row, wrap, center, center);
+  overflow: hidden;
+  margin: 20px;
+
+  &__rss {
+    width: 98%;
+    min-height: 10vh;
+    @include flexbox(row, wrap, center, center);
+    overflow: hidden;
+    margin: 20px;
+
+    &--article {
+      width: 20%;
+      min-height: 60vh;
+      border-radius: 10px;
+      border: 1px solid gray;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 20px 20px 20px 0px;
+
+      .title {
+        font-size: 26px;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 50px 10px 10px 10px;
+        min-height: 10px;
+        white-space: normal;
+        @include flexbox(row, wrap, center, center);
+        cursor: pointer;
+
+      }
+
+
+      img {
+        width: 100%;
+        min-height: 100px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+      }
+    }
+    &--article:hover{
+      transition: transform 0.3s ease-out;
+      transform: translateY(-0.15rem);
+      box-shadow: 0px 3px 15px #2c2c2c;
+    }
+
+    &--news {
+      width: 40%;
+      min-height: 20vh;
+      border-radius: 10px;
+      border: 1px solid gray;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 20px 20px 20px 0px;
+
+      .title {
+        font-size: 26px;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 10px;
+        min-height: 10px;
+        white-space: normal;
+      }
+
+      .info {
+        width: 100%;
+        min-height: 10vh;
+        @include flexbox(row, wrap, space-between, center);
+
+        &__author {
+          font-style: italic;
+          font-size: 20px;
+          margin-left: 20px;
+        }
+
+        &__date {
+          margin-right: 20px;
+          color: rgb(49, 49, 236);
+        }
+
+      }
+
+      .button {
+        width: 200px;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 10px;
+        margin: 20px auto;
+        border: 1px solid orangered;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: sans-serif;
+        color: #fefefe;
+        background: orangered;
+        border-radius: 22px;
+        font-weight: 700;
+        transition: background .250s linear, color .250s linear, border .250s linear;
+      }
+
+
+      .button:hover {
+        background: transparent;
+        color: orangered;
+      }
+
+      .button:focus {
+        outline: none;
+        box-shadow: 0 0 2px 3px orangered;
+      }
+
+      // img {
+      //   width: 100%;
+      //   min-height: 100px;
+      //   border-top-left-radius: 10px;
+      //   border-top-right-radius: 10px;
+      //   cursor: pointer;
+      // }
+    }
+  }
+
+
+  &__feed {
+    width: 40%;
+    min-height: 20vh;
+    border-radius: 10px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 20px 20px 20px 0px;
+
+    &--title {
+      font-size: 26px;
+      font-weight: 600;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 10px;
+      min-height: 10px;
+      white-space: normal;
+    }
+
+    &--info {
+      width: 100%;
+      min-height: 10vh;
+      @include flexbox(row, wrap, space-between, center);
+
+      .author {
+        font-style: italic;
+        font-size: 20px;
+        margin-left: 20px;
+      }
+
+      .date {
+        margin-right: 20px;
+        color: rgb(49, 49, 236);
+      }
+
+    }
+
+    &--button {
+      width: 200px;
+      height: 40px;
+      border: 1px solid;
+      border-radius: 10px;
+      margin: 20px auto;
+      border: 1px solid orangered;
+      font-size: 20px;
+      cursor: pointer;
+      font-family: sans-serif;
+      color: #fefefe;
+      background: orangered;
+      border-radius: 22px;
+      font-weight: 700;
+      transition: background .250s linear, color .250s linear, border .250s linear;
+    }
+
+
+    &--button:hover {
+      background: transparent;
+      color: orangered;
+    }
+
+    &--button:focus {
+      outline: none;
+      box-shadow: 0 0 2px 3px orangered;
+    }
+
+    // img {
+    //   width: 100%;
+    //   min-height: 100px;
+    //   border-top-left-radius: 10px;
+    //   border-top-right-radius: 10px;
+    //   cursor: pointer;
+    // }
+  }
+
+
+}
